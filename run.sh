@@ -4,7 +4,7 @@ file_user="./user.txt"
 file_passwd="./passwd.txt"
 if [ -f $file_user ]
 then
-    for line in cat `cat $file_user`
+    for line in `cat $file_user`
     do
         echo "item: ${line}"
     done
