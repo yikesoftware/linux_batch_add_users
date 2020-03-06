@@ -4,7 +4,7 @@ Linux系统下批量添加用户的脚本<br>
 
 # 目录说明
 ## run.sh
-脚本文件，需要root权限运行
+脚本文件，运行时需要root权限
 
 ## user.txt
 批量添加的用户列表<br>
@@ -19,7 +19,7 @@ Linux系统下批量添加用户的脚本<br>
 *批量添加完后建议删除passwd.txt，以免造成密码泄露*
 
 # 使用说明
-编辑user.txt和passwd.txt两个文件中的批量用户数据以root身份运行run.sh即可
+编辑user.txt和passwd.txt两个文件后运行run.sh即可：
 ```shell
 # chmod 744 ./run.sh
 # ./run.sh
