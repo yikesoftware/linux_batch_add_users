@@ -20,3 +20,7 @@ Linux系统下批量添加用户的脚本<br>
 
 # 使用说明
 编辑user.txt和passwd.txt两个文件中的批量用户数据以root身份运行run.sh即可
+```shell
+# chmod 744 ./run.sh
+# ./run.sh
+```
