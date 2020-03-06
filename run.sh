@@ -1,19 +1,33 @@
 #!/bin/bash
 echo "************************************************************"
-echo "Check..."
-if [ ! -f "/data/filename" ];then
-echo "Error：./user.txt不存在！"
-exit 1
+file_user="./user.txt"
+file_passwd="./passwd.txt"
+if [ -f $file_user ]
+then
+    for line in cat `cat $file_user`
+    do
+        echo "item: ${line}"
+    done
+else
+    echo "Can not find 'user.txt'"
+    echo "Nothing has changed..."
+    exit 1
+fi
+
+if [ -f $file_passwd ]
+then
+    echo "'passwd.txt' existed..."
+else
+    echo "Can not find 'passwd.txt'"
+    echo "Nothing has changed..."
+    exit 1
 if
-for item in `cat ./user.txt`
-do
-echo $item
-done
+
 echo "Prepare to add user_list in user.txt to /etc/passwd..."
-newusers < user.txt
-pwunconv
-echo "Setting passwords..."
-chpasswd < passwd.txt
-pwconv
+sudo newusers < user.txt
+sudo pwunconv
+sudo echo "Setting passwords..."
+sudo chpasswd < passwd.txt
+sudo pwconv
 echo "Completed!"
 echo "************************************************************"
