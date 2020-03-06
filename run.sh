@@ -21,7 +21,7 @@ else
     echo "Can not find 'passwd.txt'"
     echo "Nothing has changed..."
     exit 1
-if
+fi
 
 echo "Prepare to add user_list in user.txt to /etc/passwd..."
 sudo newusers < user.txt
